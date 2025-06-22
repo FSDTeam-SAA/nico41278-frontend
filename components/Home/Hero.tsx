@@ -22,7 +22,7 @@ const Hero = () => {
           who believe in your talent. Get booked for real opportunities that
           move your career forward.
         </p>
-        <button className="rounded-sm bg-color-primary py-2 px-5 text-white">
+        <button className="rounded-sm bg-[#44b6ca] py-2 px-5 text-white">
           Get Represented
         </button>
       </div>

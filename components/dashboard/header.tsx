@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className="bg-teal-500 text-white px-6 py-4">
+    <header className="bg-dashprimary text-white px-6 py-4">
       <div className="flex items-center justify-end">
         <div className="flex items-center space-x-3">
           <div className="text-right">

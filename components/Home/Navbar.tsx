@@ -42,7 +42,7 @@ const Navbar = () => {
         {/* Auth Buttons (Desktop) */}
         <div className="hidden items-center space-x-4 md:flex">
           <Button variant="ghost">Login</Button>
-          <button className="rounded-sm bg-color-primary py-2 px-5 text-white">
+          <button className="rounded-sm bg-[#44b6ca] py-2 px-5 text-white">
             Get Represented
           </button>
         </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
                 ))}
                 <div className="flex flex-col space-y-2 pt-4">
                   <button>Login</button>
-                  <button className="rounded-sm bg-color-primary py-2 px-5 text-white">
+                  <button className="rounded-sm bg-[#44b6ca] py-2 px-5 text-white">
                     Get Represented
                   </button>
                 </div>
