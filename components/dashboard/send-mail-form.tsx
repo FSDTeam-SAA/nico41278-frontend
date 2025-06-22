@@ -10,13 +10,14 @@ import {
   Bold,
   Italic,
   Underline,
-  Link,
   AlignLeft,
   AlignCenter,
   AlignRight,
   List,
   ListOrdered,
+  Link2,
 } from "lucide-react"
+import Link from "next/link"
 
 export function SendMailForm() {
   const [subject, setSubject] = useState("Experience Because Active - Considered Thankful")
@@ -38,18 +39,15 @@ Best regards,
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center space-x-4">
-        <button className="text-gray-600 hover:text-gray-900">
-          <ArrowLeft className="h-5 w-5" />
-        </button>
-        <h1 className="text-xl font-semibold text-gray-900">Send mail to the subscribers</h1>
-        <Button className="ml-auto bg-teal-500 hover:bg-teal-600">Send Email</Button>
+      <div className="flex items-center justify-between space-x-4">
+        <h1 className="text-2xl font-bold text-gray-900">Send mail to the subscribers</h1>
+        <Link href={"/dashboard/subscribers/send-mail"}><Button className="ml-auto bg-dashprimary hover:bg-dashprimary">See Subscriber List</Button></Link>
       </div>
 
       <div className="bg-white rounded-lg p-6 shadow-sm">
         <div className="space-y-6">
           <div>
-            <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="subject" className="text-sm font-bold text-gray-700">
               Compose Your Email
             </Label>
             <div className="mt-1">
@@ -77,7 +75,7 @@ Best regards,
                   <Underline className="h-4 w-4" />
                 </button>
                 <button className="p-1 hover:bg-gray-200 rounded">
-                  <Link className="h-4 w-4" />
+                  <Link2 className="h-4 w-4" />
                 </button>
                 <div className="w-px h-4 bg-gray-300 mx-2" />
                 <button className="p-1 hover:bg-gray-200 rounded">
@@ -108,7 +106,7 @@ Best regards,
           </div>
 
           <div className="flex justify-center">
-            <Button className="bg-teal-500 hover:bg-teal-600 px-8">Send Email</Button>
+            <Button className="bg-dashprimary hover:bg-teal-600 px-8">Send Email</Button>
           </div>
         </div>
       </div>

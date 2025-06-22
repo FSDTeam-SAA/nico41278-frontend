@@ -1,8 +1,8 @@
 import { AddAgencyForm } from "@/components/dashboard/add-agency-form"
 
-export default function AddAgencyPage() {
+export default function AgencyListsPage() {
   return (
-    <div className="max-w-2xl">
+    <div>
       <AddAgencyForm />
     </div>
   )

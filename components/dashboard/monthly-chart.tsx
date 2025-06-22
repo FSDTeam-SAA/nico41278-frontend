@@ -23,7 +23,7 @@ export function MonthlyChart() {
   const maxValue = Math.max(...chartData.map((d) => d.value))
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm">
+    <div className="bg-dashsecoundary rounded-lg p-6 shadow-[0px_4px_8px_1px_#00000033]">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-semibold text-gray-900">Monthly Purchase Amount</h2>
         <button className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900">
