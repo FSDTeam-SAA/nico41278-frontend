@@ -5,21 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CalendarPlus, X } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import useAxios from "@/Hooks/useAxios";
+import { useRouter } from "next/navigation";
 
 export function AddAgencyForm() {
-  const [emails, setEmails] = useState([
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-    "Abcd@gmail.com",
-  ]);
+  const axiosInstance = useAxios();
+
+  const [emails, setEmails] = useState<string[]>([]);
   const [newEmail, setNewEmail] = useState("");
+  const [location, setLocation] = useState("");
+  const [name, setName] = useState("");
+  const router = useRouter();
 
   const removeEmail = (index: number) => {
     setEmails(emails.filter((_, i) => i !== index));
@@ -32,16 +30,49 @@ export function AddAgencyForm() {
     }
   };
 
+  const { mutate, isPending } = useMutation({
+    mutationFn: async () => {
+      const payload = {
+        name,
+        location,
+        emails,
+      };
+      const res = await axiosInstance.post("/agents/create", payload);
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Agency added successfully!");
+      router.push("/dashboard/add-agency");
+      setName("");
+      setLocation("");
+      setEmails([]);
+    },
+    onError: () => {
+      toast.error("Failed to add agency");
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!name.trim() || !location.trim() || emails.length === 0) {
+      toast.error("Please fill all fields before submitting.");
+      return;
+    }
+    mutate();
+  };
+
   return (
     <div>
       <div className="flex items-center space-x-2 mb-6 w-full bg-dashsecoundary p-4 rounded-lg">
         <div>
-          <span className="text-dashprimary text-sm"><CalendarPlus /></span>
+          <span className="text-dashprimary text-sm">
+            <CalendarPlus />
+          </span>
         </div>
         <h1 className="text-2xl text-dashprimary font-bold">Add Agency</h1>
       </div>
 
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div className="bg-dashsecoundary p-4 rounded-lg">
           <Label
             htmlFor="location"
@@ -52,6 +83,8 @@ export function AddAgencyForm() {
           <Input
             id="location"
             type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
             className="mt-1"
             placeholder="Enter location"
           />
@@ -64,6 +97,8 @@ export function AddAgencyForm() {
           <Input
             id="name"
             type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="mt-1"
             placeholder="Enter agency name"
           />
@@ -85,7 +120,7 @@ export function AddAgencyForm() {
             <Button
               type="button"
               onClick={addEmail}
-              className="bg-dashprimary hover:bg-teal-600 w-[100px]"
+              className="bg-dashprimary hover:bg-dashprimary w-[100px]"
             >
               Add
             </Button>
@@ -95,30 +130,35 @@ export function AddAgencyForm() {
         <div className="bg-dashsecoundary p-4 rounded-lg">
           <Label className="text-sm font-medium text-gray-700">Emails</Label>
           <div className="mt-2 space-y-2 max-h-64 overflow-y-auto">
-            {emails.map((email, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between border-b border-gray-300 py-2"
-              >
-                <span className="text-sm text-gray-700">{email}</span>
-                <button
-                  type="button"
-                  onClick={() => removeEmail(index)}
-                  className="text-gray-400 hover:text-red-500"
+            {emails.length > 0 ? (
+              emails.map((email, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between bg-white p-2 rounded-md shadow-sm"
                 >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-            ))}
+                  <span className="text-sm text-gray-800">{email}</span>
+                  <Button
+                    type="button"
+                    onClick={() => removeEmail(index)}
+                    className="bg-red-500 hover:bg-red-600 text-white"
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
+                </div>
+              ))
+            ) : (
+              <p className="text-sm text-gray-500">No emails added yet.</p>
+            )}
           </div>
         </div>
 
         <div className="flex justify-center pt-4">
           <Button
             type="submit"
-            className="bg-dashprimary hover:bg-teal-600 px-8"
+            className="bg-dashprimary hover:bg-dashprimary px-8"
+            disabled={isPending}
           >
-            Add Agency
+            {isPending ? "Adding..." : "Add Agency"}
           </Button>
         </div>
       </form>
