@@ -3,6 +3,7 @@ import Decorator from "@/components/Home/Decorator";
 import Faq from "@/components/Home/Faq";
 import Hero from "@/components/Home/Hero";
 import HowItWorks from "@/components/Home/HowItWorks";
+import PricingSection from "@/components/Home/PricingSection";
 import WebsiteName from "@/components/Home/WebsiteName";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <HowItWorks />
       <Faq />
       <Decorator />
+      <PricingSection />
     </div>
   );
 }
