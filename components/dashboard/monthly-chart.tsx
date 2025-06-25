@@ -19,7 +19,7 @@ const chartData = [
 ]
 
 export function MonthlyChart() {
-  const [selectedYear, setSelectedYear] = useState("This year")
+  const [selectedYear] = useState("This year")
   const maxValue = Math.max(...chartData.map((d) => d.value))
 
   return (
