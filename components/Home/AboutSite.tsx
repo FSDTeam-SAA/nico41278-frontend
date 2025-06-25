@@ -10,15 +10,18 @@ const AboutSite = () => {
           <h2 className="text-2xl font-semibold mb-4">Say about your site</h2>
           <p className="text-gray-700 leading-relaxed mb-3">
             Lorem ipsum is a dummy or placeholder text commonly used in graphic
-            design, publishing, and web development.
+            design, publishing, and web development.  Lorem ipsum is a dummy or placeholder text commonly used in graphic
+            design, publishing, and web development. 
           </p>
           <p className="text-gray-700 leading-relaxed mb-3">
             Lorem ipsum is a dummy or placeholder text commonly used in graphic
-            design, publishing, and web development.
+            design, publishing, and web development. Lorem ipsum is a dummy or placeholder text commonly used in graphic
+            design, publishing, and web development. 
           </p>
           <p className="text-gray-700 leading-relaxed">
             Lorem ipsum is a dummy or placeholder text commonly used in graphic
-            design, publishing, and web development.
+            design, publishing, and web development. Lorem ipsum is a dummy or placeholder text commonly used in graphic
+            design, publishing, and web development. 
           </p>
         </div>
       </div>

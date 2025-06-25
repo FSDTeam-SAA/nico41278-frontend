@@ -1,3 +1,4 @@
+import AboutMe from "@/components/Home/AboutMe";
 import AboutSite from "@/components/Home/AboutSite";
 import Decorator from "@/components/Home/Decorator";
 import Faq from "@/components/Home/Faq";
@@ -12,6 +13,7 @@ export default function Home() {
     <div>
       <Hero />
       <AboutSite />
+      <AboutMe />
       <WebsiteName />
       <HowItWorks />
       <Faq />
