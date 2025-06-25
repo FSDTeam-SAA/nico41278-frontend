@@ -11,10 +11,10 @@ const Hero = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="text-center min-h-[calc(100vh-90.97px)] flex flex-col justify-center items-center"
+        className="text-center min-h-[calc(100vh-200.97px)] flex flex-col justify-center items-center"
       >
-        <h1 className="text-5xl font-bold max-w-xl mx-auto text-center">
-          Connect with <span className="text-color-primary">Real Talent</span>{" "}
+        <h1 className="text-[88px] font-bold mx-auto text-center">
+          Connect with <span className="text-dashprimary">Real Talent</span>{" "}
           Agents Now
         </h1>
         <p className="my-3 text-gray-500 max-w-lg text-center mx-auto">
@@ -36,7 +36,7 @@ const Hero = () => {
           className="rotate-[70deg]"
         />
 
-        <div className="bg-[#6bd1e3] px-15 py-4 rounded-lg flex gap-5">
+        <div className="bg-[#6bd1e3] px-15 p-4 rounded-lg flex gap-5 mt-8">
           <div className="flex flex-row items-center gap-12">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
               <Avatar>
@@ -78,7 +78,7 @@ const Hero = () => {
           </div>
 
           <div className="">
-            <p>******</p>
+            <p className="flex text-3xl text-yellow-500 gap-2">******</p>
             <p className="text-white text-sm mt-2">5,000+ users</p>
           </div>
         </div>
