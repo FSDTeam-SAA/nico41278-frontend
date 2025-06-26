@@ -29,7 +29,7 @@ const WebsiteName = () => {
   ];
 
   return (
-    <div className="container mx-auto mb-20">
+    <div className="container mx-auto mb-20 mt-0 md:mt-5 ">
       <h1 className="text-5xl font-bold text-center mb-10">How you&apos;ll use Website Name</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {cardItmes.map((item, index) => (
