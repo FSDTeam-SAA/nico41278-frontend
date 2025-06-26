@@ -12,13 +12,13 @@ const WebsiteName = () => {
       title: "Manage and customize your lists.",
       description:
         "Submit to your full agent list, only SAG-franchised agents, or a select few — the choice is yours.",
-      image: "/Layer_2.png",
+      image: "/Layer_3.png",
     },
     {
       title: "Manage and customize your lists.",
       description:
         "Submit to your full agent list, only SAG-franchised agents, or a select few — the choice is yours.",
-      image: "/Layer_3.png",
+      image: "/Layer_2.png",
     },
     {
       title: "Manage and customize your lists.",
@@ -30,7 +30,9 @@ const WebsiteName = () => {
 
   return (
     <div className="container mx-auto mb-20">
-      <h1 className="text-5xl font-bold text-center mb-10">How you&apos;ll use Website Name</h1>
+      <h1 className="text-5xl font-bold text-center mb-10">
+        How you&apos;ll use Website Name
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {cardItmes.map((item, index) => (
           <div key={index} className="bg-[#f0fdff] p-4 rounded-lg">
