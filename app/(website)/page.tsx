@@ -8,6 +8,7 @@ import Hero from "@/components/Home/Hero";
 import HowItWorks from "@/components/Home/HowItWorks";
 import Navbar from "@/components/Home/Navbar";
 import PricingSection from "@/components/Home/PricingSection";
+import Quote from "@/components/Home/Quote";
 import WebsiteName from "@/components/Home/WebsiteName";
 
 
@@ -17,7 +18,9 @@ export default function Home() {
         <Navbar />
       <Hero />
       <AboutSite />
+      <Quote/>
       <AboutMe />
+        <Quote/>
       <WebsiteName />
       <HowItWorks />
       <Faq />

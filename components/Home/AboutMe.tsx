@@ -3,13 +3,7 @@ import Image from "next/image";
 const AboutMe = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <Image
-        src="/say.png"
-        alt="Vector Graphic"
-        width={500}
-        height={300}
-        className="object-cover w-full  mx-auto"
-      />
+   
       <section className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 p-4 sm:p-6 mb-8 sm:mb-12">
         <div className="flex-shrink-0">
           <Image
@@ -54,13 +48,7 @@ const AboutMe = () => {
           </p>
         </div>
       </section>
-      <Image
-        src="/say.png"
-        alt="Vector Graphic"
-        width={500}
-        height={300}
-        className="object-cover w-full mx-auto"
-      />
+     
     </div>
   );
 };

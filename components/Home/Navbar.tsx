@@ -8,6 +8,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Navbar = () => {
   const navLinks = [
@@ -24,9 +25,14 @@ const Navbar = () => {
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-0">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="h-8 w-12 rounded-md bg-color-secondary"></div>
           <Link href="/" className="text-xl font-bold">
-            Your Logo
+            <Image
+              src="/logo.png"
+              alt="Website Logo"
+              width={167}
+              height={47}
+              className="w-24 md:w-32 h-auto object-contain"
+            />
           </Link>
         </div>
 
