@@ -50,10 +50,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-base sm:text-lg font-normal text-[#000000] lg:opacity-0">Legal</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/privacy-policy" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/terms" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">
                 Terms of Service
               </Link>
             </nav>
