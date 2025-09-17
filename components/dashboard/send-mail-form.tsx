@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
-
   Bold,
   Italic,
   Underline,
@@ -16,11 +15,13 @@ import {
   List,
   ListOrdered,
   Link2,
-} from "lucide-react"
-import Link from "next/link"
+} from "lucide-react";
+import Link from "next/link";
 
 export function SendMailForm() {
-  const [subject, setSubject] = useState("Experience Because Active - Considered Thankful")
+  const [subject, setSubject] = useState(
+    "Experience Because Active - Considered Thankful"
+  );
   const [content, setContent] = useState(`Dear friend Name,
 
 I hope this email finds you well. I'm reaching out because I believe you experience and skills would make you a valuable addition to our company.
@@ -35,19 +36,28 @@ Our company has been operating successfully for over 10 years, and we're looking
 If you're interested in learning more about these opportunities, please don't hesitate to reach out.
 
 Best regards,
-[Your Name]`)
+[Your Name]`);
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between space-x-4">
-        <h1 className="text-2xl font-bold text-gray-900">Send mail to the subscribers</h1>
-        <Link href={"/dashboard/subscribers/send-mail"}><Button className="ml-auto bg-dashprimary hover:bg-dashprimary">See Subscriber List</Button></Link>
+        <h1 className="text-2xl font-bold text-gray-900">
+          Send mail to the subscribers
+        </h1>
+        <Link href={"/dashboard/subscribers/send-mail"}>
+          <Button className="ml-auto bg-dashprimary hover:bg-dashprimary">
+            See Subscriber List
+          </Button>
+        </Link>
       </div>
 
       <div className="bg-white rounded-lg p-6 shadow-sm">
         <div className="space-y-6">
           <div>
-            <Label htmlFor="subject" className="text-sm font-bold text-gray-700">
+            <Label
+              htmlFor="subject"
+              className="text-sm font-bold text-gray-700"
+            >
               Compose Your Email
             </Label>
             <div className="mt-1">
@@ -106,10 +116,12 @@ Best regards,
           </div>
 
           <div className="flex justify-center">
-            <Button className="bg-dashprimary hover:bg-teal-600 px-8">Send Email</Button>
+            <Button className="bg-dashprimary hover:bg-[#42A3B2]/80 px-8">
+              Send Email
+            </Button>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

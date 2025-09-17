@@ -13,9 +13,24 @@ import {
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Add Agency", href: "/dashboard/add-agency", addUrl: "/dashboard/add-agency/agency-lists", icon: Building2 },
-  { name: "Pricing", href: "/dashboard/pricing", addUrl: "/dashboard/pricing/add-plan", icon: DollarSign },
-  { name: "Subscriber", href: "/dashboard/subscribers", addUrl: "/dashboard/subscribers/send-mail", icon: Users },
+  {
+    name: "Add Agency",
+    href: "/dashboard/add-agency",
+    addUrl: "/dashboard/add-agency/agency-lists",
+    icon: Building2,
+  },
+  {
+    name: "Pricing",
+    href: "/dashboard/pricing",
+    addUrl: "/dashboard/pricing/add-plan",
+    icon: DollarSign,
+  },
+  {
+    name: "Subscriber",
+    href: "/dashboard/subscribers",
+    addUrl: "/dashboard/subscribers/send-mail",
+    icon: Users,
+  },
 ];
 
 export function Sidebar() {
@@ -56,7 +71,7 @@ export function Sidebar() {
 
       {/* Logout */}
       <div className="p-4">
-        <button className="flex items-center px-4 py-3 text-sm font-medium text-teal-100 hover:bg-teal-600 hover:text-white rounded-lg transition-colors w-full">
+        <button className="flex items-center px-4 py-3 text-sm font-medium text-teal-100 hover:bg-[#42A3B2]/80 hover:text-white rounded-lg transition-colors w-full">
           <LogOut className="mr-3 h-5 w-5" />
           Logout
         </button>

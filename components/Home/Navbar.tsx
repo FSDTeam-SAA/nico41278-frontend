@@ -25,9 +25,11 @@ const Navbar = () => {
       <nav className="container mx-auto flex items-center justify-between h-[100px] px-4 lg:px-0">
         {/* Logo */}
         <div className="flex items-center space-x-2">
+
           <div className="h-[167px] w-[40px] rounded-md bg-color-secondary"></div>
           <Link href="/" className="text-xl font-bold">
             <Image src={"/logo.png"} alt="logo" width={100} height={100} className="h-full w-full" />
+
           </Link>
         </div>
 
