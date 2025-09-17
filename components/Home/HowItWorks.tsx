@@ -18,9 +18,9 @@ const HowItWorks = () => {
             />
 
             <div className="  pb-3 h-auto md:h-[150px] w-full lg:w-[262px] ">
-              <h1 className="text-dashprimary">Step One</h1>
-              <h2 className="font-semibold my-2">View and edit list</h2>
-              <p className="border-b-8 border-dashprimary rounded-lg">
+              <h1 className="text-[#311FD4]">Step One</h1>
+              <h2 className="font-semibold my-2 text-[#000000] text-[25px]">View and edit list</h2>
+              <p className="border-b-8 border-[#311FD4] rounded-lg text-[#000000]">
                 Get instant access to our entire vetted list of LA, NY, or ATL
                 agent emails and customize them as you see fit.
               </p>
@@ -72,9 +72,9 @@ const HowItWorks = () => {
             />
 
             <div className="pb-3 h-auto md:h-[150px] w-full lg:w-[262px]">
-              <h1 className="text-dashprimary">Step Two</h1>
-              <h2 className="font-semibold my-2">Compose submission</h2>
-               <p className="border-b-8 border-dashprimary rounded-lg">
+              <h1 className="text-[#4733FF]">Step Two</h1>
+              <h2 className="font-semibold my-2 text-[#000000] text-[25px]">Compose submission</h2>
+               <p className="border-b-8 border-[#4733FF] rounded-lg">
                 Use our custom-built composer to attach your headshoots and
                 draft your personalized cover letter. Gmail required.
               </p>
@@ -106,9 +106,9 @@ const HowItWorks = () => {
             />
 
             <div className="pb-3 h-auto md:h-[150px] w-full lg:w-[262px]">
-              <h1 className="text-dashprimary">Step Three</h1>
-              <h2 className="font-semibold my-2">Send and track</h2>
-               <p className="border-b-8 border-dashprimary rounded-lg">
+              <h1 className="text-[#4733FF]">Step Three</h1>
+              <h2 className="font-semibold my-2 text-[#000000] text-[25px]">Send and track</h2>
+               <p className="border-b-8 border-[#311FD4] rounded-lg text-[#000000]">
                 Send your individually addressed emails all at once and track
                 every interaction with a click of a button.
               </p>
@@ -160,9 +160,9 @@ const HowItWorks = () => {
             />
 
             <div className=" pb-3 h-auto md:h-[150px] w-full lg:w-[262px]">
-              <h1 className="text-dashprimary">Step Four</h1>
-              <h2 className="font-semibold my-2">Rinse and repeat</h2>
-             <p className="border-b-8 border-dashprimary rounded-lg">
+              <h1 className="text-[#311FD4]">Step Four</h1>
+              <h2 className="font-semibold my-2 text-[#000000] text-[25px]">Rinse and repeat</h2>
+             <p className="border-b-8 border-[#311FD4] rounded-lg text-[#000000]">
                 Get up to 3 full submission attempts for each list purchased
                 with our plus bundle. *Allow one month between submissions.
               </p>
