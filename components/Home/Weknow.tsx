@@ -46,7 +46,7 @@ const Weknow = () => {
             solely on who you already know. We&apos;re your gateway to that solution,
             ready to open doors and connect you with the right people, so you can
             take control and start your career on your terms.
-          </p>
+          </p> 
         </div>
       </div>
     </section>
