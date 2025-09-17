@@ -1,34 +1,38 @@
 "use client";
-import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 
 const Hero = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className=" mx-auto px-4 sm:px-6 lg:px-8">
       <div
         style={{
-          backgroundImage: "url('/hero-bg.png')",
+          backgroundImage: "url('/hero-bg222.png')",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
         className="text-center min-h-[calc(100vh-200.97px)] flex flex-col justify-center items-center py-8 sm:py-12"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[88px] font-bold mx-auto text-center">
-          Connect with <span className="text-dashprimary">Real Talent</span>{" "}
-          Agents Now
-        </h1>
-        <p className="my-3 text-gray-500 max-w-sm sm:max-w-md lg:max-w-lg text-sm sm:text-base md:text-lg text-center mx-auto">
-          Get discovered by the right people. Get represented by professionals
-          who believe in your talent. Get booked for real opportunities that
-          move your career forward.
-        </p>
-        <button className="rounded-sm bg-[#44b6ca] py-2 px-4 sm:px-5 text-white text-sm sm:text-base">
-          Get Represented
-        </button>
+        <div className="container mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[88px] font-bold mx-auto text-center ">
+            Connect with <span className="text-[#003DFF]">Real Talent</span>{" "}
+            Agents Now
+          </h1>
+          <p className="my-3 text-gray-500 max-w-sm sm:max-w-md lg:max-w-[748px] text-sm sm:text-base md:text-lg text-center mx-auto mt-[50px] ">
+            Get discovered by the right people. Get represented by professionals
+            who believe in your talent. Get booked for real opportunities that
+            move your career forward. 
+          </p>
+          <p className="my-3 text-gray-500 max-w-sm sm:max-w-md lg:max-w-[748px] text-sm sm:text-base md:text-lg text-center mx-auto mt-[50px] ">
+            Today, right from the comfort of your computer.
+          </p>
+          <button className="rounded-sm bg-[#FFEC4C] py-2 px-4 sm:px-5 text-[#000000] text-sm sm:text-base mt-[100px]">
+            Get Represented
+          </button>
+        </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-between max-w-[900px] mx-auto -mt-12 sm:-mt-16 lg:-mt-20 gap-4 sm:gap-0">
+      {/* <div className="flex flex-col sm:flex-row items-center justify-between max-w-[900px] mx-auto -mt-12 sm:-mt-16 lg:-mt-20 gap-4 sm:gap-0">
         <Image
           src="/two-image.png"
           alt="Hero Image"
@@ -91,7 +95,7 @@ const Hero = () => {
           height={20}
           className="w-16 sm:w-20 lg:w-[120px] hidden md:block"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

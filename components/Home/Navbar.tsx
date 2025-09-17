@@ -21,18 +21,15 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-[#eefffe] shadow-[0px_2px_8px_0px_#00000029]">
-      <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-0">
+    <header className="bg-[#FFFFFF] shadow-[0px_2px_8px_0px_#00000029]">
+      <nav className="container mx-auto flex items-center justify-between h-[100px] px-4 lg:px-0">
         {/* Logo */}
         <div className="flex items-center space-x-2">
+
+          <div className="h-[167px] w-[40px] rounded-md bg-color-secondary"></div>
           <Link href="/" className="text-xl font-bold">
-            <Image
-              src="/logo.png"
-              alt="Website Logo"
-              width={167}
-              height={47}
-              className="w-24 md:w-32 h-auto object-contain"
-            />
+            <Image src={"/logo.png"} alt="logo" width={100} height={100} className="h-full w-full" />
+
           </Link>
         </div>
 
@@ -48,7 +45,7 @@ const Navbar = () => {
         {/* Auth Buttons (Desktop) */}
         <div className="hidden items-center space-x-4 md:flex">
           <Button variant="ghost">Login</Button>
-          <button className="rounded-sm bg-[#44b6ca] py-2 px-5 text-white">
+          <button className="rounded-sm bg-[#FFEC4C] py-2 px-5 text-[#000000]">
             Get Represented
           </button>
         </div>

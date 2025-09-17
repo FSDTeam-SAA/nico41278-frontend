@@ -52,7 +52,7 @@ interface TestimonialCardProps {
 const TestimonialCard = ({ testimonial, className = "" }: TestimonialCardProps) => {
   return (
     <Card
-      className={`relative flex flex-col md:flex-row items-center w-full max-w-4xl mx-auto rounded-xl bg-white shadow-[0_-4px_20px_0_#9EE6F3,0_4px_20px_0_#9EE6F3] ${className}`}
+      className={`relative flex flex-col md:flex-row items-center w-full max-w-4xl mx-auto rounded-xl bg-white shadow-[0px_34.72px_73.87px_0px_#8B8B8B] ${className}`}
     >
       <div className="flex-1 p-4 sm:p-6 md:p-6 lg:p-8 order-2 md:order-1">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4 md:mb-6">
@@ -112,9 +112,9 @@ const Happy_Client = () => {
       </div>
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-8">
         <div className="text-center md:text-left mb-6 sm:mb-8 md:mb-10 lg:mb-16">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-semibold text-[#000000] leading-tight">
-            What our happy <br className="hidden sm:block md:hidden" />
-            client say
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-semibold text-[#000000] leading-tight text-center">
+           What Our <span className="text-[#003DFF]"> Happy Clients</span> Say 
+           
           </h2>
         </div>
 
