@@ -47,7 +47,7 @@ const HowItWorks = () => {
   }
 
   return (
-    <div className="container mx-auto mb-20 px-4">
+    <div className="container mx-auto mb-20 px-4 pt-14">
       <motion.h1
         className="text-center font-bold text-4xl md:text-5xl mb-8"
         initial={{ opacity: 0, y: -30 }}

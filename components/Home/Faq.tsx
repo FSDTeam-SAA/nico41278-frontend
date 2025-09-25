@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -16,22 +15,22 @@ export default function Faq() {
     },
   }
 
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-    scale: 0.95,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.95,
     },
-  },
-};
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  }
 
   const faqItems = [
     {
@@ -63,11 +62,11 @@ const itemVariants = {
   ]
 
   return (
-    <div className="mb-32 relative">
+    <div className="mb-20 sm:mb-28 lg:mb-32 relative px-4 sm:px-6 lg:px-0">
       <div className="container mx-auto relative z-10">
         {/* FAQ Title */}
         <motion.h1
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-gray-900 leading-snug"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -77,9 +76,14 @@ const itemVariants = {
         </motion.h1>
 
         {/* FAQ Accordion */}
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqItems.map((item, index) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
+            {faqItems.map((item) => (
               <motion.div
                 key={item.value}
                 variants={itemVariants as any}
@@ -91,12 +95,14 @@ const itemVariants = {
               >
                 <AccordionItem
                   value={item.value}
-                  className="bg-[#F8F8F8] rounded-lg border border-gray-200 px-6 data-[state=open]:border-l-4 data-[state=open]:border-l-[#311FD4] data-[state=open]:bg-[linear-gradient(259.88deg,#FFFFFF_-29.31%,#F4F5FF_60.8%)]"
+                  className="bg-[#F8F8F8] rounded-lg border border-gray-200 px-4 sm:px-6 data-[state=open]:border-l-4 data-[state=open]:border-l-[#311FD4] data-[state=open]:bg-[linear-gradient(259.88deg,#FFFFFF_-29.31%,#F4F5FF_60.8%)]"
                 >
-                  <AccordionTrigger className="text-left font-medium text-gray-900 hover:no-underline py-6 data-[state=open]:text-[#311FD4]">
+                  <AccordionTrigger className="text-left !text-sm sm:!text-sm lg:!text-lg font-semibold text-[#170F49] hover:no-underline py-4 sm:py-5 lg:py-6 data-[state=open]:text-[#311FD4]">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 pb-6">{item.answer}</AccordionContent>
+                  <AccordionContent className="text-gray-600 text-sm sm:text-base leading-relaxed pb-4 sm:pb-5 lg:pb-6">
+                    {item.answer}
+                  </AccordionContent>
                 </AccordionItem>
               </motion.div>
             ))}
@@ -106,4 +112,3 @@ const itemVariants = {
     </div>
   )
 }
-
