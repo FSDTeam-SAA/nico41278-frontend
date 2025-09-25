@@ -31,7 +31,7 @@ const AboutMe = () => {
               />
             </motion.div>
           </div>
-          <div className="space-y-3 sm:space-y-4 text-center sm:text-left py-[136px]">
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left py-[0px] md:py-[136px]">
             <motion.h1
               className="text-lg sm:text-xl lg:text-[32px] text-[#000000] font-semibold mb-2 sm:mb-3"
               initial={{ opacity: 0, x: -50 }}
@@ -43,7 +43,7 @@ const AboutMe = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xs sm:text-sm lg:text-[24px] text-black mb-2 pt-[56px] font-normal !leading-[150%]"
+              className="text-xs sm:text-sm lg:text-[24px] text-black mb-2 pt-[30px]  md:pt-[56px] font-normal !leading-[150%]"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
