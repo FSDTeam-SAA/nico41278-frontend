@@ -1,5 +1,6 @@
 
 
+
 "use client"
 
 import Image from "next/image"
@@ -12,13 +13,13 @@ const AboutMe = () => {
         <section className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 p-4 sm:p-6 ">
           <div className="flex-shrink-0 ">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              initial={{ opacity: 0, x: -150, rotate: -30, scale: 0.5 }}
+              whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], type: "spring", stiffness: 80 }}
               whileHover={{
-                scale: 1.05,
-                rotate: 2,
+                scale: 1.1,
+                rotate: 5,
                 transition: { duration: 0.3 },
               }}
             >
@@ -34,20 +35,20 @@ const AboutMe = () => {
           <div className="space-y-3 sm:space-y-4 text-center sm:text-left py-[0px] md:py-[136px]">
             <motion.h1
               className="text-lg sm:text-xl lg:text-[32px] text-[#000000] font-semibold mb-2 sm:mb-3"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 100, y: -30 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
             >
               Why We Started This
             </motion.h1>
 
             <motion.p
               className="text-xs sm:text-sm lg:text-[24px] text-black mb-2 pt-[30px]  md:pt-[56px] font-normal !leading-[150%]"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 100, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
             >
               As a duo (one a professional actor, the other an experienced model) we bring extensive industry experience
               and have been where you are: full of potential but unsure where to start. We understand just how

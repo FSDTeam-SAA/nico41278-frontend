@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -9,25 +10,25 @@ export default function Faq() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.15,
         delayChildren: 0.2,
       },
     },
   }
 
   const itemVariants = {
-    hidden: {
+    hidden: (index: number) => ({
       opacity: 0,
-      y: 20,
-      scale: 0.95,
-    },
+      x: index % 2 === 0 ? -80 : 80,
+      rotate: index % 2 === 0 ? -3 : 3,
+    }),
     visible: {
       opacity: 1,
-      y: 0,
-      scale: 1,
+      x: 0,
+      rotate: 0,
       transition: {
-        duration: 0.5,
-        ease: "easeOut",
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   }
@@ -67,10 +68,10 @@ export default function Faq() {
         {/* FAQ Title */}
         <motion.h1
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-gray-900 leading-snug"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut", type: "spring", stiffness: 100 }}
         >
           FAQ&apos;s
         </motion.h1>
@@ -80,16 +81,18 @@ export default function Faq() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
-            {faqItems.map((item) => (
+            {faqItems.map((item, index) => (
               <motion.div
                 key={item.value}
+                custom={index}
                 variants={itemVariants as any}
                 whileHover={{
-                  scale: 1.01,
-                  boxShadow: "0 10px 25px rgba(49, 31, 212, 0.1)",
+                  scale: 1.02,
+                  x: index % 2 === 0 ? 5 : -5,
+                  boxShadow: "0 10px 25px rgba(49, 31, 212, 0.15)",
                 }}
                 transition={{ duration: 0.2 }}
               >

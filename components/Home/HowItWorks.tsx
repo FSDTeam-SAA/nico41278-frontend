@@ -16,54 +16,62 @@ const HowItWorks = () => {
     },
   }
 
-  const stepVariants = {
+  const stepVariants = (index: number) => ({
     hidden: {
       opacity: 0,
+      x: index % 2 === 0 ? -120 : 120,
       y: 50,
+      rotate: index % 2 === 0 ? -5 : 5,
     },
     visible: {
       opacity: 1,
+      x: 0,
       y: 0,
+      rotate: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut",
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
-  }
+  })
 
-  const imageVariants = {
+  const imageVariants = (index: number) => ({
     hidden: {
       opacity: 0,
-      scale: 0.8,
+      scale: 0.6,
+      rotate: index % 2 === 0 ? -20 : 20,
     },
     visible: {
       opacity: 1,
       scale: 1,
+      rotate: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.7,
         ease: "easeOut",
+        type: "spring",
+        stiffness: 100,
       },
     },
-  }
+  })
 
   return (
     <div className="container mx-auto mb-20 px-4 pt-14">
       <motion.h1
         className="text-center font-bold text-4xl md:text-5xl mb-8"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -80, scale: 0.8 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], type: "spring", stiffness: 100 }}
       >
         How it works
       </motion.h1>
 
       <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        {/* step 1 */}
-        <motion.div variants={stepVariants as any}>
+        {/* step 1 - FROM LEFT */}
+        <motion.div variants={stepVariants(0) as any}>
           <div className="flex flex-col md:flex-row justify-between relative  ">
             <div className="flex flex-col md:flex-row gap-10 items-center">
-              <motion.div variants={imageVariants as any}>
+              <motion.div variants={imageVariants(0) as any}>
                 <Image src={"/1.png"} alt="1" width={1000} height={1000} className="h-32 w-32" />
               </motion.div>
 
@@ -79,10 +87,10 @@ const HowItWorks = () => {
 
             <div className=" pr-10 static lg:absolute top-7 right-0 ">
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 50, rotate: 10 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <Image
                   src={"/1-arrow.png"}
@@ -97,25 +105,25 @@ const HowItWorks = () => {
 
           <div className="mt-5 lg:mt-[60px]">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <Image src={"/step-1.png"} alt="step-1" width={1200} height={1000} className="mx-auto w-full h-auto" />
             </motion.div>
           </div>
         </motion.div>
 
-        {/* step 2 */}
-        <motion.div className="mt-16 rllative" variants={stepVariants as any}>
+        {/* step 2 - FROM RIGHT */}
+        <motion.div className="mt-16 rllative" variants={stepVariants(1) as any}>
           <div className="flex flex-col md:flex-row justify-end relative ">
             <div className=" pl-10 static lg:absolute top-7 left-0">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -50, rotate: -10 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <Image
                   src={"/2-arrow.png"}
@@ -128,7 +136,7 @@ const HowItWorks = () => {
             </div>
 
             <div className="flex flex-col md:flex-row gap-5 items-center">
-              <motion.div variants={imageVariants as any}>
+              <motion.div variants={imageVariants(1) as any}>
                 <Image src={"/2.png"} alt="2" width={1000} height={1000} className="h-32 w-32" />
               </motion.div>
 
@@ -145,21 +153,21 @@ const HowItWorks = () => {
 
           <div className="mt-[60px]">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <Image src={"/step-2.png"} alt="step-2" width={1200} height={1000} className="mx-auto w-full h-auto" />
             </motion.div>
           </div>
         </motion.div>
 
-        {/* step 3 */}
-        <motion.div className="mt-16 relative" variants={stepVariants as any}>
+        {/* step 3 - FROM LEFT */}
+        <motion.div className="mt-16 relative" variants={stepVariants(2) as any}>
           <div className="flex flex-col md:flex-row gap-5 items-center">
             <div className="flex flex-col md:flex-row gap-10 items-center">
-              <motion.div variants={imageVariants as any}>
+              <motion.div variants={imageVariants(2) as any}>
                 <Image src={"/3.png"} alt="3" width={1000} height={1000} className="h-32 w-32" />
               </motion.div>
 
@@ -175,10 +183,10 @@ const HowItWorks = () => {
 
             <div className=" pr-10 static lg:absolute top-7 right-0">
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 50, rotate: 10 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <Image
                   src={"/1-arrow.png"}
@@ -193,25 +201,25 @@ const HowItWorks = () => {
 
           <div className="mt-[64px]">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <Image src={"/step-3.png"} alt="step-3" width={1200} height={1000} className="mx-auto w-full h-auto" />
             </motion.div>
           </div>
         </motion.div>
 
-        {/* step 4 */}
-        <motion.div className="mt-16" variants={stepVariants as any}>
+        {/* step 4 - FROM RIGHT */}
+        <motion.div className="mt-16" variants={stepVariants(3) as any}>
           <div className="flex flex-col md:flex-row justify-end relative">
             <div className="pl-10 static lg:absolute top-7 left-0">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -50, rotate: -10 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <Image
                   src={"/2-arrow.png"}
@@ -224,7 +232,7 @@ const HowItWorks = () => {
             </div>
 
             <div className="flex flex-col md:flex-row gap-10  items-center">
-              <motion.div variants={imageVariants as any}>
+              <motion.div variants={imageVariants(3) as any}>
                 <Image src={"/4.png"} alt="4" width={1000} height={1000} className="h-32 w-32" />
               </motion.div>
 
@@ -241,10 +249,10 @@ const HowItWorks = () => {
 
           <div className="mt-[64px]">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <Image src={"/step-4.png"} alt="step-4" width={1200} height={1000} className="mx-auto w-full h-auto" />
             </motion.div>
