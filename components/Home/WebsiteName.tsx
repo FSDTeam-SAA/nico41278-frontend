@@ -1,4 +1,6 @@
 
+
+
 "use client"
 
 import Image from "next/image"
@@ -40,18 +42,20 @@ const WebsiteName = () => {
   }
 
   const cardVariants = {
-    hidden: {
+    hidden: (index: number) => ({
       opacity: 0,
+      x: index % 2 === 0 ? -100 : 100,
       y: 50,
-      scale: 0.9,
-    },
+      rotate: index % 2 === 0 ? -8 : 8,
+    }),
     visible: {
       opacity: 1,
+      x: 0,
       y: 0,
-      scale: 1,
+      rotate: 0,
       transition: {
-        duration: 0.5,
-        ease: "easeOut",
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   }
@@ -63,10 +67,10 @@ const WebsiteName = () => {
         <section className="mb-20">
           <motion.h2
             className="text-4xl sm:text-5xl font-bold text-center mb-10"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 80, scale: 0.8 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], type: "spring", stiffness: 100 }}
           >
             How you&apos;ll use <span className="text-[#003DFF]">uModel</span>
           </motion.h2>
@@ -76,24 +80,26 @@ const WebsiteName = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
           >
             {cardItems.map((item, index) => (
               <motion.div
                 key={index}
+                custom={index}
                 className="bg-white/70 p-6 rounded-lg shadow-sm"
                 variants={cardVariants as any}
                 whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+                  scale: 1.05,
+                  rotate: index % 2 === 0 ? 2 : -2,
+                  boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)",
                 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.3 }}
               >
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
                 >
                   <Image
                     src={item.image || "/placeholder.svg"}
@@ -112,15 +118,15 @@ const WebsiteName = () => {
           <div className="flex justify-center mt-10">
             <motion.button
               className="bg-[#44B6CA] text-white py-3 px-6 rounded-lg hover:bg-[#3799a8] transition"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0, rotate: -180 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.5, type: "spring", stiffness: 200 }}
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 10px 25px rgba(68, 182, 202, 0.3)",
+                scale: 1.1,
+                boxShadow: "0 10px 25px rgba(68, 182, 202, 0.4)",
               }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.9 }}
             >
               Get Represented
             </motion.button>
@@ -131,10 +137,10 @@ const WebsiteName = () => {
         <section>
           <motion.h2
             className="text-4xl sm:text-5xl font-bold text-center mb-10"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 100, rotate: 10 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             How you&apos;ll use <span className="text-[#003DFF]">Website Name</span>
           </motion.h2>
@@ -144,24 +150,26 @@ const WebsiteName = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
           >
             {cardItems.map((item, index) => (
               <motion.div
                 key={index}
+                custom={index}
                 className="bg-[#f0fdff] p-6 rounded-lg shadow-sm"
                 variants={cardVariants as any}
                 whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+                  scale: 1.05,
+                  rotate: index % 2 === 0 ? -2 : 2,
+                  boxShadow: "0 15px 30px rgba(0, 61, 255, 0.1)",
                 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.3 }}
               >
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0.5, rotate: 180 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
                 >
                   <Image
                     src={item.image || "/placeholder.svg"}

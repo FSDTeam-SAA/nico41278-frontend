@@ -1,11 +1,12 @@
 
+
 "use client"
 
 import { Check, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { motion, Transition } from "framer-motion"
+import { motion, type Transition } from "framer-motion"
 
 export default function PricingSection() {
   const features = [
@@ -15,22 +16,39 @@ export default function PricingSection() {
     { name: "Customizable recipient list", basic: false, premium: true },
   ]
 
- const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    scale: 0.9,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-    } as Transition,
-  },
-};
+  const basicCardVariants = {
+    hidden: {
+      opacity: 0,
+      x: -150,
+      rotate: -10,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      rotate: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      } as Transition,
+    },
+  }
+
+  const premiumCardVariants = {
+    hidden: {
+      opacity: 0,
+      x: 150,
+      rotate: 10,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      rotate: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      } as Transition,
+    },
+  }
 
   const featureVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -59,17 +77,17 @@ export default function PricingSection() {
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.5, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             Start today, with basic or premium plan, you choose
           </motion.h1>
 
           <motion.p
             className="text-lg text-gray-500 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -81,15 +99,16 @@ export default function PricingSection() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-none mx-auto">
           {/* Basic Plan */}
           <motion.div
-            variants={cardVariants}
+            variants={basicCardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{
-              scale: 1.02,
-              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+              scale: 1.05,
+              rotate: -2,
+              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
             }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
           >
             <Card className="relative bg-white border border-gray-200 rounded-2xl p-8 w-[360px] h-[640px] flex flex-col">
               <CardHeader className="p-0 mb-8">
@@ -152,22 +171,23 @@ export default function PricingSection() {
 
           {/* Premium Plan */}
           <motion.div
-            variants={cardVariants}
+            variants={premiumCardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
             whileHover={{
-              scale: 1.02,
-              boxShadow: "0 25px 50px rgba(49, 31, 212, 0.2)",
+              scale: 1.05,
+              rotate: 2,
+              boxShadow: "0 25px 50px rgba(49, 31, 212, 0.3)",
             }}
+            transition={{ duration: 0.3 }}
           >
             <Card className="relative bg-[#311FD4] border-0 rounded-2xl p-8 text-white w-[360px] h-[640px] flex flex-col">
               <motion.div
-                initial={{ opacity: 0, scale: 0, rotate: -10 }}
+                initial={{ opacity: 0, scale: 0, rotate: -180 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.4, type: "spring", stiffness: 200 }}
               >
                 <Badge className="absolute -top-3 -right-3 bg-gray-800 text-white px-4 py-1 rounded-full text-sm">
                   Best choice
@@ -192,7 +212,7 @@ export default function PricingSection() {
                     <motion.div
                       key={index}
                       className="flex items-center gap-3"
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
@@ -223,4 +243,3 @@ export default function PricingSection() {
     </div>
   )
 }
-
