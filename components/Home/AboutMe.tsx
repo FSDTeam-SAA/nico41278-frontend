@@ -1,6 +1,3 @@
-
-
-
 "use client"
 
 import Image from "next/image"
@@ -13,14 +10,18 @@ const AboutMe = () => {
         <section className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 p-4 sm:p-6 ">
           <div className="flex-shrink-0 ">
             <motion.div
-              initial={{ opacity: 0, x: -150, rotate: -30, scale: 0.5 }}
-              whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 100, scale: 0.8 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], type: "spring", stiffness: 80 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
               whileHover={{
-                scale: 1.1,
-                rotate: 5,
-                transition: { duration: 0.3 },
+                scale: 1.05,
+                y: -8,
+                boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.15)",
+                transition: { duration: 0.4, ease: "easeOut" },
               }}
             >
               <Image
@@ -32,6 +33,7 @@ const AboutMe = () => {
               />
             </motion.div>
           </div>
+
           <div className="space-y-3 sm:space-y-4 text-center sm:text-left py-[0px] md:py-[136px]">
             <motion.h1
               className="text-lg sm:text-xl lg:text-[32px] text-[#000000] font-semibold mb-2 sm:mb-3"
@@ -53,12 +55,12 @@ const AboutMe = () => {
               As a duo (one a professional actor, the other an experienced model) we bring extensive industry experience
               and have been where you are: full of potential but unsure where to start. We understand just how
               challenging it is to get your foot in the door and have both spent countless hours reaching out to
-              agencies, sorting through unreliable contacts, and dead ends. It's frustrating, time-consuming, and often
-              overwhelming. That's why we created an extensive, carefully researched list of real, trusted agencies,
+              agencies, sorting through unreliable contacts, and dead ends. It&apos;s frustrating, time-consuming, and often
+              overwhelming. That&apos;s why we created an extensive, carefully researched list of real, trusted agencies,
               built from personal experience, industry connections, and testimonials from friends in the business. This
-              isn't just a random database; it's a toolkit designed to cut through the noise and help you get noticed by
+              isn&apos;t just a random database; it&apos;s a toolkit designed to cut through the noise and help you get noticed by
               the right people. We want to help new faces get in front of trusted agents without the stress and
-              guesswork. You focus on showing up, we'll handle the rest.
+              guesswork. You focus on showing up, we&apos;ll handle the rest.
             </motion.p>
           </div>
         </section>

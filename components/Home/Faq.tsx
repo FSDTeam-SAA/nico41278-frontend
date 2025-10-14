@@ -88,6 +88,7 @@ export default function Faq() {
               <motion.div
                 key={item.value}
                 custom={index}
+                // eslint-disable-next-line
                 variants={itemVariants as any}
                 whileHover={{
                   scale: 1.02,
