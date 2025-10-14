@@ -1,34 +1,38 @@
 
 
+/* eslint-disable */
+"use client";
 
-"use client"
-
-import Image from "next/image"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const WebsiteName = () => {
   const cardItems = [
     {
       title: "Manage and customize your lists.",
-      description: "Submit to your full agent list, only SAG-franchised agents, or a select few — the choice is yours.",
+      description:
+        "Submit to your full agent list, only SAG-franchised agents, or a select few — the choice is yours.",
       image: "/Layer_1.png",
     },
     {
       title: "Track and manage submissions easily.",
-      description: "Stay organized by monitoring agent responses and keeping your submissions in one place.",
+      description:
+        "Stay organized by monitoring agent responses and keeping your submissions in one place.",
       image: "/Layer_3.png",
     },
     {
       title: "Get insights that matter.",
-      description: "Understand which agents engage with your profile to refine your strategy.",
+      description:
+        "Understand which agents engage with your profile to refine your strategy.",
       image: "/Layer_2.png",
     },
     {
       title: "Connect with trusted agencies.",
-      description: "Our vetted network ensures your portfolio reaches the right people.",
+      description:
+        "Our vetted network ensures your portfolio reaches the right people.",
       image: "/Layer_4.png",
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -39,7 +43,7 @@ const WebsiteName = () => {
         delayChildren: 0.1,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: (index: number) => ({
@@ -58,7 +62,7 @@ const WebsiteName = () => {
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
-  }
+  };
 
   return (
     <div className="bg-[#FCF4E4] py-16">
@@ -70,7 +74,12 @@ const WebsiteName = () => {
             initial={{ opacity: 0, y: 80, scale: 0.8 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], type: "spring", stiffness: 100 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: "spring",
+              stiffness: 100,
+            }}
           >
             How you&apos;ll use <span className="text-[#003DFF]">uModel</span>
           </motion.h2>
@@ -95,21 +104,18 @@ const WebsiteName = () => {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
-                >
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.title}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 mb-4"
-                  />
-                </motion.div>
-                <h3 className="mb-3 font-semibold text-[#170F49]">{item.title}</h3>
+                {/* Image (animation removed) */}
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 mb-4"
+                />
+
+                <h3 className="mb-3 font-semibold text-[#170F49]">
+                  {item.title}
+                </h3>
                 <p className="text-[#292727]">{item.description}</p>
               </motion.div>
             ))}
@@ -118,14 +124,16 @@ const WebsiteName = () => {
           <div className="flex justify-center mt-10">
             <motion.button
               className="bg-[#44B6CA] text-white py-3 px-6 rounded-lg hover:bg-[#3799a8] transition"
-              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5, type: "spring", stiffness: 200 }}
-              whileHover={{
-                scale: 1.1,
-                boxShadow: "0 10px 25px rgba(68, 182, 202, 0.4)",
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+                duration: 0.5,
               }}
+              whileHover={{ scale: 1.1, rotate: 3 }}
               whileTap={{ scale: 0.9 }}
             >
               Get Represented
@@ -142,7 +150,8 @@ const WebsiteName = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            How you&apos;ll use <span className="text-[#003DFF]">Website Name</span>
+            How you&apos;ll use{" "}
+            <span className="text-[#003DFF]">Website Name</span>
           </motion.h2>
 
           <motion.div
@@ -165,20 +174,15 @@ const WebsiteName = () => {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5, rotate: 180 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
-                >
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.title}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 mb-4"
-                  />
-                </motion.div>
+                {/* Image (animation removed) */}
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 mb-4"
+                />
+
                 <h3 className="mb-3 font-semibold">{item.title}</h3>
                 <p className="text-gray-500">{item.description}</p>
               </motion.div>
@@ -187,7 +191,7 @@ const WebsiteName = () => {
         </section>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WebsiteName
+export default WebsiteName;
