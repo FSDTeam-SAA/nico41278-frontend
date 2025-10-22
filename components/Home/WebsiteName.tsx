@@ -1,38 +1,32 @@
-
-
 /* eslint-disable */
-"use client";
+"use client"
 
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Image from "next/image"
+import { motion } from "framer-motion"
 
 const WebsiteName = () => {
   const cardItems = [
     {
       title: "Manage and customize your lists.",
-      description:
-        "Submit to your full agent list, only SAG-franchised agents, or a select few — the choice is yours.",
+      description: "Submit to your full agent list, only SAG-franchised agents, or a select few — the choice is yours.",
       image: "/Layer_1.png",
     },
     {
       title: "Track and manage submissions easily.",
-      description:
-        "Stay organized by monitoring agent responses and keeping your submissions in one place.",
+      description: "Stay organized by monitoring agent responses and keeping your submissions in one place.",
       image: "/Layer_3.png",
     },
     {
       title: "Get insights that matter.",
-      description:
-        "Understand which agents engage with your profile to refine your strategy.",
+      description: "Understand which agents engage with your profile to refine your strategy.",
       image: "/Layer_2.png",
     },
     {
       title: "Connect with trusted agencies.",
-      description:
-        "Our vetted network ensures your portfolio reaches the right people.",
+      description: "Our vetted network ensures your portfolio reaches the right people.",
       image: "/Layer_4.png",
     },
-  ];
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -43,7 +37,7 @@ const WebsiteName = () => {
         delayChildren: 0.1,
       },
     },
-  };
+  }
 
   const cardVariants = {
     hidden: (index: number) => ({
@@ -62,7 +56,7 @@ const WebsiteName = () => {
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
-  };
+  }
 
   return (
     <div className="bg-[#FCF4E4] py-16">
@@ -97,11 +91,7 @@ const WebsiteName = () => {
                 custom={index}
                 className="bg-white/70 p-6 rounded-lg shadow-sm"
                 variants={cardVariants as any}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: index % 2 === 0 ? 2 : -2,
-                  boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)",
-                }}
+                whileHover={{ y: -8, boxShadow: "0 12px 24px rgba(0,0,0,0.1)" }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Image (animation removed) */}
@@ -113,9 +103,7 @@ const WebsiteName = () => {
                   className="w-16 h-16 mb-4"
                 />
 
-                <h3 className="mb-3 font-semibold text-[#170F49]">
-                  {item.title}
-                </h3>
+                <h3 className="mb-3 font-semibold text-[#170F49]">{item.title}</h3>
                 <p className="text-[#292727]">{item.description}</p>
               </motion.div>
             ))}
@@ -124,17 +112,7 @@ const WebsiteName = () => {
           <div className="flex justify-center mt-10">
             <motion.button
               className="bg-[#44B6CA] text-white py-3 px-6 rounded-lg hover:bg-[#3799a8] transition"
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 15,
-                duration: 0.5,
-              }}
-              whileHover={{ scale: 1.1, rotate: 3 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ y: -8, boxShadow: "0 12px 24px rgba(0,0,0,0.1)" }}
             >
               Get Represented
             </motion.button>
@@ -145,13 +123,12 @@ const WebsiteName = () => {
         <section>
           <motion.h2
             className="text-4xl sm:text-5xl font-bold text-center mb-10"
-            initial={{ opacity: 0, x: 100, rotate: 10 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            initial={{ opacity: 0, x: -150 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            How you&apos;ll use{" "}
-            <span className="text-[#003DFF]">Website Name</span>
+            How you&apos;ll use <span className="text-[#003DFF]">Website Name</span>
           </motion.h2>
 
           <motion.div
@@ -167,11 +144,7 @@ const WebsiteName = () => {
                 custom={index}
                 className="bg-[#f0fdff] p-6 rounded-lg shadow-sm"
                 variants={cardVariants as any}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: index % 2 === 0 ? -2 : 2,
-                  boxShadow: "0 15px 30px rgba(0, 61, 255, 0.1)",
-                }}
+                whileHover={{ y: -8, boxShadow: "0 12px 24px rgba(0,0,0,0.1)" }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Image (animation removed) */}
@@ -191,7 +164,7 @@ const WebsiteName = () => {
         </section>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default WebsiteName;
+export default WebsiteName
