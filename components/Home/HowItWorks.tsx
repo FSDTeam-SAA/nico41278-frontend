@@ -19,18 +19,14 @@ const HowItWorks = () => {
   const stepVariants = (index: number) => ({
     hidden: {
       opacity: 0,
-      x: index % 2 === 0 ? -120 : 120,
-      y: 50,
-      rotate: index % 2 === 0 ? -5 : 5,
+      x: index % 2 === 0 ? -80 : 80,
     },
     visible: {
       opacity: 1,
       x: 0,
-      y: 0,
-      rotate: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
   })
@@ -38,18 +34,14 @@ const HowItWorks = () => {
   const imageVariants = (index: number) => ({
     hidden: {
       opacity: 0,
-      scale: 0.6,
-      rotate: index % 2 === 0 ? -20 : 20,
+      scale: 0.8,
     },
     visible: {
       opacity: 1,
       scale: 1,
-      rotate: 0,
       transition: {
-        duration: 0.7,
+        duration: 0.6,
         ease: "easeOut",
-        type: "spring",
-        stiffness: 100,
       },
     },
   })

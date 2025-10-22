@@ -1,5 +1,3 @@
-
-
 "use client"
 
 import { Check, X } from "lucide-react"
@@ -19,16 +17,14 @@ export default function PricingSection() {
   const basicCardVariants = {
     hidden: {
       opacity: 0,
-      x: -150,
-      rotate: -10,
+      x: -200,
     },
     visible: {
       opacity: 1,
       x: 0,
-      rotate: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.9,
+        ease: [0.34, 1.56, 0.64, 1],
       } as Transition,
     },
   }
@@ -36,20 +32,17 @@ export default function PricingSection() {
   const premiumCardVariants = {
     hidden: {
       opacity: 0,
-      x: 150,
-      rotate: 10,
+      x: 200,
     },
     visible: {
       opacity: 1,
       x: 0,
-      rotate: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.9,
+        ease: [0.34, 1.56, 0.64, 1],
       } as Transition,
     },
   }
-
 
   return (
     <div className="w-full min-h-screen relative">
@@ -93,8 +86,7 @@ export default function PricingSection() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{
-              scale: 1.05,
-              rotate: -2,
+              scale: 1.02,
               boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
             }}
             transition={{ duration: 0.3 }}
@@ -165,8 +157,7 @@ export default function PricingSection() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{
-              scale: 1.05,
-              rotate: 2,
+              scale: 1.02,
               boxShadow: "0 25px 50px rgba(49, 31, 212, 0.3)",
             }}
             transition={{ duration: 0.3 }}
