@@ -1,6 +1,3 @@
-
-
-
 "use client"
 import { Card } from "@/components/ui/card"
 import { Star, ThumbsUp } from "lucide-react"
@@ -79,8 +76,8 @@ const TestimonialCard = ({ testimonial, className = "", index }: TestimonialCard
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       whileHover={{
-        scale: 1.03,
-        rotate: index % 2 === 0 ? 1 : -1,
+        y: -8,
+      
       }}
       transition={{ duration: 0.3 }}
     >
